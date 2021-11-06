@@ -9,10 +9,10 @@ function MovieItem({ movie }) {
         //send selected movie to selectedReducer
         dispatch({
             type: 'SET_SELECTED',
-            payload: movie
+            payload: movie.id
         });
 
-        history.push('/details');
+        history.push(`/details/${movie.id}`);
     }
     
     return (

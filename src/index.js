@@ -53,7 +53,7 @@ const genres = (state = [], action) => {
 }
 
 // Hold selected movie while switching contexts
-const selected = (state = {}, action) => {
+const selectedId = (state = "", action) => {
     switch(action.type) {
         case 'SET_SELECTED':
             return action.payload;
@@ -67,7 +67,7 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
-        selected
+        selectedId
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
