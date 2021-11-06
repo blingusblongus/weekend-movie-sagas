@@ -50,11 +50,11 @@ function AddMovie(props) {
                     value={movie.description}
                     onChange={(e) => setMovie({ ...movie, description: e.target.value })}
                 />
-                <select name="genre">
+                <select name="genre" defaultValue="choose" required>
+                    <option name="choose" value="0" disabled hidden>Select a Genre</option>
                     {genres.map((genre, i) => {
                         return <option key={i} value={genre.name}>{genre.name}</option>;
                     })}
-
                 </select>
                 <button type="submit">Add Movie</button>
             </form>
