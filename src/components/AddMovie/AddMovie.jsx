@@ -16,7 +16,9 @@ function AddMovie(props) {
         dispatch({type:'FETCH_GENRES'});
     }, []);
 
-    const postMovie = () => {
+    const postMovie = (e) => {
+        e.preventDefault();
+
         axios.post('/api/movie/', movie)
             .then(response => {
                 console.log('POSTED')
@@ -25,7 +27,10 @@ function AddMovie(props) {
             });
     }
 
-    console.log(genres);
+    console.log(movie);
+    console.log('genre', genres);
+
+
     return (
         <>
             <form onSubmit={postMovie}>
@@ -50,10 +55,20 @@ function AddMovie(props) {
                     value={movie.description}
                     onChange={(e) => setMovie({ ...movie, description: e.target.value })}
                 />
-                <select name="genre" defaultValue="choose" required>
-                    <option name="choose" value="0" disabled hidden>Select a Genre</option>
+                <select 
+                    name="genre"
+                    value={movie.id}
+                    onChange={(e) => setMovie({...movie, genre: e.target.value})}
+                    required>
+                    <option name="choose" value={0} disabled>Select a Genre</option>
                     {genres.map((genre, i) => {
-                        return <option key={i} value={genre.name}>{genre.name}</option>;
+                        console.log(genre.id);
+                        return (
+                        <option 
+                            key={i} 
+                            value={genre.id}
+                            >{genre.name}</option>
+                        );
                     })}
                 </select>
                 <button type="submit">Add Movie</button>

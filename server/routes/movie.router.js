@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
 
 router.get('/details', (req, res) => {
   console.log('GET');
+  console.log(req.query);
 
   const id = req.query.id;
   const queryText = `
@@ -34,6 +35,7 @@ router.get('/details', (req, res) => {
   
   pool.query(queryText, values)
     .then(result => {
+      console.log(result.rows);
       console.log('QUERY DB FOR DETAILS');
       res.send(result.rows[0]);
     }).catch(err => {
