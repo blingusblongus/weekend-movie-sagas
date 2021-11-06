@@ -1,22 +1,31 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 function AddMovie(props) {
+    const dispatch = useDispatch();
+    const genres = useSelector(store => store.genres);
     const [movie, setMovie] = useState({
         title: '',
         poster: '',
         description: '',
-        genres: []
+        genre: ''
     });
 
+    useEffect(() => {
+        dispatch({type:'FETCH_GENRES'});
+    }, []);
+
     const postMovie = () => {
-        axios.post('/api/movie/add', movie)
+        axios.post('/api/movie/', movie)
             .then(response => {
                 console.log('POSTED')
             }).catch(err => {
                 console.log(err);
             });
     }
+
+    console.log(genres);
     return (
         <>
             <form onSubmit={postMovie}>
@@ -41,6 +50,12 @@ function AddMovie(props) {
                     value={movie.description}
                     onChange={(e) => setMovie({ ...movie, description: e.target.value })}
                 />
+                <select name="genre">
+                    {genres.map((genre, i) => {
+                        return <option key={i} value={genre.name}>{genre.name}</option>;
+                    })}
+
+                </select>
                 <button type="submit">Add Movie</button>
             </form>
         </>
