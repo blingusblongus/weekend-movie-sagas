@@ -34,11 +34,20 @@ function MovieDetails(props) {
 
         <>
             {details && (
-                <>
-                    <h2>{details.title}</h2>
+                <div>
                     <button onClick={backToList}>Back to List</button>
-                </>
+                    <h2>{details.title}</h2>
+                    <img src={details.poster}></img>
+                    <p>{details.description}</p>
+                    <h3>Genres:</h3>
+                    {details.genres.map(genre => {
+                        return (
+                            <div className="genre">{genre}</div>
+                        )
+                    })}
+                </div>
             )}
+            
 
         </>
     )

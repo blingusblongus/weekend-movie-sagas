@@ -23,7 +23,7 @@ router.get('/details', (req, res) => {
   const id = req.query.id;
   const queryText = `
   SELECT movies.id, movies.title, movies.poster, movies.description,
-  ARRAY_AGG(genres.name) 
+  ARRAY_AGG(genres.name) AS "genres" 
   FROM movies
   JOIN movies_genres ON movies.id = movies_genres.movie_id
   JOIN genres ON genres.id = movies_genres.genre_id
