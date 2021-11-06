@@ -9,7 +9,7 @@ function AddMovie(props) {
         title: '',
         poster: '',
         description: '',
-        genre: ''
+        genre_id: ''
     });
 
     useEffect(() => {
@@ -58,7 +58,7 @@ function AddMovie(props) {
                 <select 
                     name="genre"
                     value={movie.id}
-                    onChange={(e) => setMovie({...movie, genre: e.target.value})}
+                    onChange={(e) => setMovie({...movie, genre_id: e.target.value})}
                     required>
                     <option name="choose" value={0} disabled>Select a Genre</option>
                     {genres.map((genre, i) => {
