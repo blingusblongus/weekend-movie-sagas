@@ -40,9 +40,9 @@ function MovieDetails(props) {
                     <img src={details.poster}></img>
                     <p>{details.description}</p>
                     <h3>Genres:</h3>
-                    {details.genres.map(genre => {
+                    {details.genres.map((genre, i) => {
                         return (
-                            <div className="genre">{genre}</div>
+                            <div className="genre" key={i}>{genre}</div>
                         )
                     })}
                 </div>
