@@ -1,0 +1,24 @@
+
+
+.inner-card {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.break {
+    width: 100%;
+    
+}
+
+h3 {
+    flex: 0 1 auto;
+    width: 100%;
+}
+
+.img-wrapper {
+    height: 100%;
+    flex: 1 1 auto;
+}

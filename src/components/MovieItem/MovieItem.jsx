@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { Card } from "@mui/material";
+import './MovieItem.css';
 
 function MovieItem({ movie }) {
     const history = useHistory();
@@ -19,18 +20,22 @@ function MovieItem({ movie }) {
 
     return (
 
-            <div className="card">
-                <Card elevation={4} sx={{borderRadius: '20px'}}>
-                    <div className="inner-card">
-                <h3>{movie.title}</h3>
-                <img
-                    src={movie.poster}
-                    alt={movie.title}
-                    onClick={showDetails} />
+        <div className="card">
+            <Card elevation={4} sx={{ borderRadius: '20px' }}>
+                <div className="inner-card">
+                    <h3>{movie.title}</h3>
+                    <div class="break"></div>
+                    <div class="img-wrapper">
+                        
+                        <img
+                            src={movie.poster}
+                            alt={movie.title}
+                            onClick={showDetails} />
                     </div>
-                </Card>
-            </div>
-        
+                </div>
+            </Card>
+        </div>
+
     )
 }
 
