@@ -1,12 +1,16 @@
-import { Container, TextField, Button } from "@material-ui/core";
+import { Container, TextField, Button, Select, MenuItem } from "@material-ui/core";
 import { Paper } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import './AddMovie.css';
+import { InputLabel } from "@mui/material";
+import { useHistory } from "react-router";
 
 function AddMovie(props) {
     const dispatch = useDispatch();
+    const history = useHistory();
+    
     const genres = useSelector(store => store.genres);
     const [movie, setMovie] = useState({
         title: '',
@@ -26,6 +30,7 @@ function AddMovie(props) {
         axios.post('/api/movie/', movie)
             .then(response => {
                 console.log('POSTED')
+                history.push('/');
             }).catch(err => {
                 console.log(err);
             });
@@ -63,25 +68,32 @@ function AddMovie(props) {
                         maxRows={8}
                         onChange={(e) => setMovie({ ...movie, description: e.target.value })}
                     />
-                    <select
+
+                    <InputLabel>Genre</InputLabel>
+                    <Select
                         name="genre"
                         value={movie.genre_id}
                         onChange={(e) => setMovie({ ...movie, genre_id: e.target.value })}
                         required>
-                        <option name="choose" value={0} disabled>Select a Genre</option>
+                        <MenuItem name="choose" value={0} disabled>Select a Genre</MenuItem>
                         {genres.map((genre, i) => {
-                            console.log(genre.id);
                             return (
-                                <option
+                                <MenuItem
                                     key={i}
                                     value={genre.id}
-                                >{genre.name}</option>
+                                >{genre.name}</MenuItem>
                             );
                         })}
-                    </select>
+                    </Select>
                     <div class="flex-container space-between" id="btn-container">
-                        <Button type="cancel" variant="outlined" onClick={cancel}>Cancel</Button>
-                        <Button type="submit" variant="contained">Save</Button>
+                        <Button type="cancel" 
+                            variant="outlined" 
+                            color="primary"
+                            onClick={cancel}>Cancel</Button>
+                        <Button 
+                            type="submit" 
+                            variant="contained"
+                            color="warning">Save</Button>
                     </div>
                 </form>
             </Paper>

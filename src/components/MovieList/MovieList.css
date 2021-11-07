@@ -2,3 +2,11 @@
     display : flex;
     flex-wrap: wrap;
 }
+
+.relative {
+    position: relative;
+}
+
+#nav-add {
+    position: absolute;
+}
