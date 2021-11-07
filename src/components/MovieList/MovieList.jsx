@@ -9,10 +9,12 @@ function MovieList() {
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
 
+    // Update Movie list on load
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    // navigate to Add Movie page
     const navAddMovie = () => {
         history.push('/add');
     }
