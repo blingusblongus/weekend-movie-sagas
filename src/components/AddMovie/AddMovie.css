@@ -1,0 +1,30 @@
+#add-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 80%;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+.input-container {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.input-field::after {
+    content: '';
+    height: 30px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+#btn-container {
+    padding-top: 20px;    
+}
