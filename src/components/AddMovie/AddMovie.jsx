@@ -1,4 +1,4 @@
-import { Container, TextField, Button, Select, MenuItem } from "@material-ui/core";
+import { TextField, Button, Select, MenuItem } from "@material-ui/core";
 import { Paper } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -10,7 +10,7 @@ import { useHistory } from "react-router";
 function AddMovie(props) {
     const dispatch = useDispatch();
     const history = useHistory();
-    
+
     const genres = useSelector(store => store.genres);
     const [movie, setMovie] = useState({
         title: '',
@@ -37,12 +37,13 @@ function AddMovie(props) {
     }
 
     // return to home screen
-    const cancel = () => {
+    const cancel = (e) => {
+        e.preventDefault();
         history.push('/');
     }
 
     return (
-        <Container>
+        <div id="form-container">
             <Paper elevation={5}>
                 <form id="add-form" onSubmit={postMovie}>
                     <TextField type="text"
@@ -66,7 +67,6 @@ function AddMovie(props) {
                         value={movie.description}
                         multiline
                         rows={4}
-                        maxRows={8}
                         onChange={(e) => setMovie({ ...movie, description: e.target.value })}
                     />
 
@@ -86,19 +86,18 @@ function AddMovie(props) {
                             );
                         })}
                     </Select>
-                    <div class="flex-container space-between" id="btn-container">
-                        <Button type="cancel" 
-                            variant="outlined" 
-                            color="primary"
+                    <div className="flex-container space-between" id="btn-container">
+                        <Button type="cancel"
+                            variant="outlined"
                             onClick={cancel}>Cancel</Button>
-                        <Button 
-                            type="submit" 
+                        <Button
+                            type="submit"
                             variant="contained"
-                            color="warning">Save</Button>
+                            color="primary">Save</Button>
                     </div>
                 </form>
             </Paper>
-        </Container>
+        </div>
     )
 }
 

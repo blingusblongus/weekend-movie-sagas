@@ -1,6 +1,6 @@
 .movies {
     display : grid;
-    grid-template-columns: .8fr .8fr .8fr;
+    grid-template-columns: .8fr .8fr .8fr .8fr;
     grid-template-rows: auto;
     row-gap: 15px;
     column-gap: 15px;
@@ -10,17 +10,36 @@
     position: relative;
 }
 
-.card {
-    width: 90%;
-}
-
-.inner-card {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-
-
 #nav-add {
-    position: absolute;
+    margin-bottom: 30px;
 }
+
+.page-title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-title {
+    position: relative;
+    width: 500px;
+    min-width: 500px;
+    height: 160px;
+    margin: auto;
+}
+
+#blob {
+    content: url('./svg/blob1.svg');
+    transform: scale(0.7) scaleY(.7) rotateZ(70deg);
+    position: absolute;
+    top: -180px;
+}
+
+.page-title > h1 {
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+

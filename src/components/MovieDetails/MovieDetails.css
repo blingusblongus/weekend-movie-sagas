@@ -1,3 +1,19 @@
 #genres {
     font-style: italic;
 }
+
+#details-card {
+    width: 80%;
+    margin: auto;
+    margin-top: 70px;
+}
+
+#details-inner {
+    padding: 25px;
+}
+
+.details-p {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+}

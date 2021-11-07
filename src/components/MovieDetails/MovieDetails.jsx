@@ -1,8 +1,11 @@
+import { Button, Card } from "@mui/material";
+import { Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory, useParams } from "react-router";
 import './MovieDetails.css';
+
 
 function MovieDetails(props) {
     const history = useHistory();
@@ -35,19 +38,23 @@ function MovieDetails(props) {
     return (
         <>
             {details && (
-                <div>
-                    <button onClick={backToList}>Back to List</button>
+                <div id="details-card">
+                    <Card elevation={5}>
+                        <div id="details-inner">
+                            <Button variant="outlined" onClick={backToList}>Back to List</Button>
 
-                    <h2>{details.title}</h2>
+                            <h2>{details.title}</h2>
 
-                    <img src={details.poster}></img>
+                            <img src={details.poster}></img>
 
-                    <p id="genres">
-                        {details.genres.length > 1 ? 'Genres: ' : 'Genre: '}
-                        {details.genres.join(', ')}
-                    </p>
+                            <p id="genres">
+                                {details.genres.length > 1 ? 'Genres: ' : 'Genre: '}
+                                {details.genres.join(', ')}
+                            </p>
 
-                    <p>{details.description}</p>
+                            <p className="details-p">{details.description}</p>
+                        </div>
+                    </Card>
                 </div>
             )}
         </>
