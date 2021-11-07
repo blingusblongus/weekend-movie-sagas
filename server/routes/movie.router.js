@@ -21,15 +21,17 @@ router.get('/details', (req, res) => {
   console.log(req.query);
 
   const id = req.query.id;
+  
+  // query database for movie info w/ aggregated genres
   const queryText = `
-  SELECT movies.id, movies.title, movies.poster, movies.description,
-  ARRAY_AGG(genres.name) AS "genres" 
-  FROM movies
-  JOIN movies_genres ON movies.id = movies_genres.movie_id
-  JOIN genres ON genres.id = movies_genres.genre_id
-  WHERE movies.id = $1
-  GROUP BY movies.id, movies.title, movies.description, movies.poster;
-  `;
+    SELECT movies.id, movies.title, movies.poster, movies.description,
+    ARRAY_AGG(genres.name) AS "genres" 
+    FROM movies
+    JOIN movies_genres ON movies.id = movies_genres.movie_id
+    JOIN genres ON genres.id = movies_genres.genre_id
+    WHERE movies.id = $1
+    GROUP BY movies.id, movies.title, movies.description, movies.poster;
+    `;
 
   const values = [id];
   
