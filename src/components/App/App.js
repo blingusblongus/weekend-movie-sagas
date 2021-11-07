@@ -13,8 +13,12 @@ import '@fontsource/roboto/700.css';
 function App() {
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
-      {/* <Background /> */}
+      <header>
+        <div className="header-blob">  </div>
+        <h1 className="header-text">The Movies Saga!</h1>
+      </header>
+
+
 
       <Router>
         <Route path="/" exact>
