@@ -14,3 +14,15 @@
     content: '';
     height: 30px;
 }
+
+.flex-container {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+#btn-container {
+    padding-top: 20px;    
+}

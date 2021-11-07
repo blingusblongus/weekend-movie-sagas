@@ -61,10 +61,10 @@ This should show all details **including ALL genres** for the selected movie. Yo
 
 This should show:
 
-- an input field (for the movie title)
-- an input field (for the movie poster image URL))
-- a textarea (for the movie description)
-- a dropdown (for the genres)
+[x] an input field (for the movie title)
+[x] an input field (for the movie poster image URL))
+[x] a textarea (for the movie description)
+[x] a dropdown (for the genres)
 
 The Add Movie page should have the buttons:
 
@@ -95,8 +95,8 @@ As one of your last projects, it's possible you will be sharing this with employ
 ## Development Stretch Goals
 
 ### Refresh on Details Page
-Allow the app to maintain on refresh our details page.
-Research [React Router URL PARAMS](https://reactrouter.com/web/example/url-params) 
+[x] Allow the app to maintain on refresh our details page.
+[x] Research [React Router URL PARAMS](https://reactrouter.com/web/example/url-params) 
 
 ### Edit Page (Stretch)
 Add to the detail page an edit button that brings the user to the edit page.
