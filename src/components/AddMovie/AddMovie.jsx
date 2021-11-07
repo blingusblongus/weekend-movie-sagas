@@ -1,4 +1,4 @@
-import { TextField, Button, Select, MenuItem } from "@material-ui/core";
+import { TextField, Button, Select, MenuItem, FormControl } from "@material-ui/core";
 import { Paper } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -46,56 +46,60 @@ function AddMovie(props) {
         <div id="form-container">
             <Paper elevation={5}>
                 <form id="add-form" onSubmit={postMovie}>
-                    <TextField type="text"
-                        placeholder="Title"
-                        className="input-field"
-                        name="title"
-                        value={movie.title}
-                        onChange={(e) => setMovie({ ...movie, title: e.target.value })}
-                    />
-                    <TextField type="text"
-                        placeholder="Poster URL"
-                        className="input-field"
-                        name="title"
-                        value={movie.poster}
-                        onChange={(e) => setMovie({ ...movie, poster: e.target.value })}
-                    />
-                    <TextField type="text"
-                        placeholder="Description"
-                        className="input-field"
-                        name="title"
-                        value={movie.description}
-                        multiline
-                        rows={4}
-                        onChange={(e) => setMovie({ ...movie, description: e.target.value })}
-                    />
+                    <FormControl>
+                        <TextField type="text"
+                            placeholder="Title"
+                            className="input-field"
+                            name="title"
+                            value={movie.title}
+                            required
+                            onChange={(e) => setMovie({ ...movie, title: e.target.value })}
+                        />
+                        <TextField type="text"
+                            placeholder="Poster URL"
+                            className="input-field"
+                            name="title"
+                            value={movie.poster}
+                            required
+                            onChange={(e) => setMovie({ ...movie, poster: e.target.value })}
+                        />
+                        <TextField type="text"
+                            placeholder="Description"
+                            className="input-field"
+                            name="title"
+                            value={movie.description}
+                            multiline
+                            rows={4}
+                            onChange={(e) => setMovie({ ...movie, description: e.target.value })}
+                        />
 
-                    <InputLabel>Genre</InputLabel>
-                    <Select
-                        name="genre"
-                        value={movie.genre_id}
-                        onChange={(e) => setMovie({ ...movie, genre_id: e.target.value })}
-                        required
-                        multiple>
-                        <MenuItem name="choose" value={0} disabled>Select a Genre</MenuItem>
-                        {genres.map((genre, i) => {
-                            return (
-                                <MenuItem
-                                    key={i}
-                                    value={genre.id}
-                                >{genre.name}</MenuItem>
-                            );
-                        })}
-                    </Select>
-                    <div className="flex-container space-between" id="btn-container">
-                        <Button type="cancel"
-                            variant="outlined"
-                            onClick={cancel}>Cancel</Button>
-                        <Button
-                            type="submit"
-                            variant="contained"
-                            color="primary">Save</Button>
-                    </div>
+                        <InputLabel>Genre</InputLabel>
+                        <Select
+                            name="genre"
+                            value={movie.genre_id}
+                            onChange={(e) => setMovie({ ...movie, genre_id: e.target.value })}
+                            required
+                            multiple>
+                            <MenuItem name="choose" value={0} disabled>Select a Genre</MenuItem>
+                            {genres.map((genre, i) => {
+                                return (
+                                    <MenuItem
+                                        key={i}
+                                        value={genre.id}
+                                    >{genre.name}</MenuItem>
+                                );
+                            })}
+                        </Select>
+                        <div className="flex-container space-between" id="btn-container">
+                            <Button type="cancel"
+                                variant="outlined"
+                                onClick={cancel}>Cancel</Button>
+                            <Button
+                                type="submit"
+                                variant="contained"
+                                color="primary">Save</Button>
+                        </div>
+                    </FormControl>
                 </form>
             </Paper>
         </div>

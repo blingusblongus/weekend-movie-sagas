@@ -6,6 +6,18 @@
     height: 350px;
     display: flex;
     flex-wrap: wrap;
+    
+}
+
+.card {
+    transform: scale(1);
+    transition: transform .3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: transform .3s ease;
 }
 
 .break {
