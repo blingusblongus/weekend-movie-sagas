@@ -37,7 +37,7 @@ function AddMovie(props) {
 
     return (
         <Container>
-            <Paper>
+            <Paper elevation={5}>
                 <form id="add-form" onSubmit={postMovie}>
                     <TextField type="text"
                         placeholder="Title"
