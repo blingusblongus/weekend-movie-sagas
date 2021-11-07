@@ -66,7 +66,6 @@ function AddMovie(props) {
                         value={movie.description}
                         multiline
                         rows={4}
-                        maxRows={8}
                         onChange={(e) => setMovie({ ...movie, description: e.target.value })}
                     />
 
@@ -86,15 +85,14 @@ function AddMovie(props) {
                             );
                         })}
                     </Select>
-                    <div class="flex-container space-between" id="btn-container">
+                    <div className="flex-container space-between" id="btn-container">
                         <Button type="cancel" 
                             variant="outlined" 
-                            color="primary"
                             onClick={cancel}>Cancel</Button>
                         <Button 
                             type="submit" 
                             variant="contained"
-                            color="warning">Save</Button>
+                            color="primary">Save</Button>
                     </div>
                 </form>
             </Paper>

@@ -24,8 +24,8 @@ function MovieItem({ movie }) {
             <Card elevation={4} sx={{ borderRadius: '20px' }}>
                 <div className="inner-card">
                     <h3>{movie.title}</h3>
-                    <div class="break"></div>
-                    <div class="img-wrapper">
+                    <div className="break"></div>
+                    <div className="img-wrapper">
                         
                         <img
                             src={movie.poster}
