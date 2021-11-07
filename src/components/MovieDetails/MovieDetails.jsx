@@ -1,19 +1,22 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router";
+import './MovieDetails.css';
 
 function MovieDetails(props) {
     const history = useHistory();
+    // getting the id from useParams allows for
+    // keeping track of current movie on refresh
     const { id } = useParams();
-    const reduxId = useSelector(store => store.selectedId);
     const [details, setDetails] = useState();
 
+    // get details from db on load
     useEffect(() => {
         getDetails();
     }, [])
 
+    // Send get request for specific movie data
     const getDetails = () => {
         axios.get(`api/movie/details?id=${id}`)
             .then(response => {
@@ -24,31 +27,29 @@ function MovieDetails(props) {
             })
     }
 
+    // navigate back to homepage
     const backToList = () => {
         history.push('/');
     }
 
-
-    console.log(details);
     return (
-
         <>
             {details && (
                 <div>
                     <button onClick={backToList}>Back to List</button>
+
                     <h2>{details.title}</h2>
+
                     <img src={details.poster}></img>
+
+                    <p id="genres">
+                        {details.genres.length > 1 ? 'Genres: ' : 'Genre: '}
+                        {details.genres.join(', ')}
+                    </p>
+
                     <p>{details.description}</p>
-                    <h3>Genres:</h3>
-                    {details.genres.map((genre, i) => {
-                        return (
-                            <div className="genre" key={i}>{genre}</div>
-                        )
-                    })}
                 </div>
             )}
-            
-
         </>
     )
 }
