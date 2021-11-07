@@ -16,7 +16,7 @@ function AddMovie(props) {
         title: '',
         poster: '',
         description: '',
-        genre_id: ''
+        genre_id: []
     });
 
     // update list of genres
@@ -75,7 +75,8 @@ function AddMovie(props) {
                         name="genre"
                         value={movie.genre_id}
                         onChange={(e) => setMovie({ ...movie, genre_id: e.target.value })}
-                        required>
+                        required
+                        multiple>
                         <MenuItem name="choose" value={0} disabled>Select a Genre</MenuItem>
                         {genres.map((genre, i) => {
                             return (

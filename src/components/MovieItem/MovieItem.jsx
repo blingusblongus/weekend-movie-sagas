@@ -20,7 +20,7 @@ function MovieItem({ movie }) {
 
     return (
 
-        <div className="card">
+        <div className="card" onClick={showDetails}>
             <Card elevation={4} sx={{ borderRadius: '20px' }}>
                 <div className="inner-card">
                     <h3>{movie.title}</h3>
@@ -30,7 +30,7 @@ function MovieItem({ movie }) {
                         <img
                             src={movie.poster}
                             alt={movie.title}
-                            onClick={showDetails} />
+                            />
                     </div>
                 </div>
             </Card>
