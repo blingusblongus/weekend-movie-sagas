@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import MovieItem from '../MovieItem/MovieItem';
-import './MovieList.css'
+import './MovieList.css';
 
 function MovieList() {
     const history = useHistory();
@@ -22,11 +22,17 @@ function MovieList() {
 
     return (
         <main className="relative">
-            <h1>MovieList</h1>
-            <Button 
+            <div className="page-title-wrapper">
+                <div class="page-title">
+                    <div id="blob"></div>
+                    <h1>MovieList</h1>
+
+                </div>
+            </div>
+            <Button
                 id="nav-add"
                 variant="contained"
-                size="large" 
+                size="large"
                 onClick={navAddMovie}>Add movie</Button>
             <section className="movies">
                 {movies.map(movie => {
