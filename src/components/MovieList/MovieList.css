@@ -1,6 +1,7 @@
 .movies {
-    display : flex;
-    flex-wrap: wrap;
+    display : grid;
+    grid-template-columns: .8fr .8fr .8fr;
+    grid-template-rows: auto;
 }
 
 .relative {

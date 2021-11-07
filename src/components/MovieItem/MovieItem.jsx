@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
+import { Container, Paper } from "@material-ui/core";
 
 function MovieItem({ movie }) {
     const history = useHistory();
@@ -16,6 +17,8 @@ function MovieItem({ movie }) {
     }
     
     return (
+
+            <Paper>
         <div>
             <h3>{movie.title}</h3>
             <img 
@@ -23,6 +26,7 @@ function MovieItem({ movie }) {
                 alt={movie.title}
                 onClick={showDetails} />
         </div>
+        </Paper>
     )
 }
 
