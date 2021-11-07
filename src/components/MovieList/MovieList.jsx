@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
@@ -22,7 +23,11 @@ function MovieList() {
     return (
         <main className="relative">
             <h1>MovieList</h1>
-            <button id="nav-add" onClick={navAddMovie}>Add movie</button>
+            <Button 
+                id="nav-add"
+                variant="contained"
+                size="large" 
+                onClick={navAddMovie}>Add movie</Button>
             <section className="movies">
                 {movies.map(movie => {
                     return (

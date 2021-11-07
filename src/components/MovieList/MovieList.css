@@ -1,6 +1,6 @@
 .movies {
     display : grid;
-    grid-template-columns: .8fr .8fr .8fr;
+    grid-template-columns: .8fr .8fr .8fr .8fr;
     grid-template-rows: auto;
     row-gap: 15px;
     column-gap: 15px;
@@ -10,10 +10,6 @@
     position: relative;
 }
 
-
-
-
-
 #nav-add {
-    position: absolute;
+    margin-bottom: 30px;
 }
