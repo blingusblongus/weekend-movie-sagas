@@ -4,6 +4,8 @@
     grid-template-rows: auto;
     row-gap: 15px;
     column-gap: 15px;
+    width: 95%;
+    margin: auto;
 }
 
 .relative {
