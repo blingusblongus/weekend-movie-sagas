@@ -38,6 +38,7 @@ I challenged myself to be creative with the styling on this one - hence the blob
 
 - React.js
 - Express.js
+- Redux
 - Material UI
 
 ## Acknowledgments
