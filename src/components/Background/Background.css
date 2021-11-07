@@ -1,6 +1,7 @@
 .bg-container {
     width: 100%;
     position: fixed;
+    z-index: 1;
 }
 
 svg {

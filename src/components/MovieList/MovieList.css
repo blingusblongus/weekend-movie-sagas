@@ -12,11 +12,13 @@
 
 .card {
     width: 90%;
+    background-color: hotpink;
 }
 
 .inner-card {
     padding-top: 20px;
     padding-bottom: 20px;
+    max-height: 375px;
 }
 
 
