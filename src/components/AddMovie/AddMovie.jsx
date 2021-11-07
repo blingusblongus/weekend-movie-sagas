@@ -36,6 +36,7 @@ function AddMovie(props) {
             });
     }
 
+    // return to home screen
     const cancel = () => {
         history.push('/');
     }
