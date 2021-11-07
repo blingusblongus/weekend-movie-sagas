@@ -25,8 +25,7 @@ function MovieList() {
             <div className="page-title-wrapper">
                 <div class="page-title">
                     <div id="blob"></div>
-                    <h1>MovieList</h1>
-
+                    <h1>Movie List</h1>
                 </div>
             </div>
             <Button

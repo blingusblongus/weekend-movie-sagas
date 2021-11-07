@@ -1,16 +1,17 @@
-# Project Name
-
-
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Movie Gallery
 
 ## Description
 
 *Duration: 2 day task*
 
-Your project description goes here. What problem did you solve? How did you solve it?
+An full-stack app for storing the details of a series of movies, adding new ones, and displaying them on a visually appealing homepage and details page.
+
+I challenged myself to be creative with the styling on this one - hence the blobs :). Creating and importing them turned out to be easy, but transforming and positioning them exactly where I wanted compared to the text I wanted them behind ended up being the real challenge.
+
 
 ## Screenshot
+
+![Screenshot of movies app](./images/screenshot.png);
 
 ## Prerequisites
 
@@ -33,4 +34,17 @@ Your project description goes here. What problem did you solve? How did you solv
 3. From the homepage, click the Add Movie button to view a form for submitting a movie to the database.
 4. Complete the form and press save to update the database with the new movie and return to the home screen, or press cancel to discard changes and leave the Add Movie page
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Built With
+
+- React.js
+- Express.js
+- Redux
+- Material UI
+
+## Acknowledgments
+
+Thanks to my instructors and peers at Prime, who have all helped to make this project a reality!
+
+## Support
+
+If you have suggestions or questions, please email me at rutherford.t.b@gmail.com!
