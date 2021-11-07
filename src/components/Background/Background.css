@@ -1,0 +1,11 @@
+.bg-container {
+    width: 100%;
+    position: fixed;
+}
+
+svg {
+    height: 100vh;
+}
+#vector-1 {
+    height: 100%;
+}

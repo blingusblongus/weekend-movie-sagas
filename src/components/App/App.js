@@ -3,6 +3,8 @@ import './App.css';
 import MovieList from '../MovieList/MovieList'
 import MovieDetails from '../MovieDetails/MovieDetails';
 import AddMovie from '../AddMovie/AddMovie';
+import { Link } from 'react-router-dom';
+import Background from '../Background/Background.jsx';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -13,6 +15,8 @@ function App() {
   return (
     <div className="App">
       <h1>The Movies Saga!</h1>
+      <Background />
+
       <Router>
         <Route path="/" exact>
           <MovieList />
